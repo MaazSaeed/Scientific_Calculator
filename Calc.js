@@ -7,8 +7,8 @@ function evaluate(expr,context)
   // string to numbers
   for(let e = 0; e < len; ++e)
   {
-    if(context != null)
-      expr[e] = context[expr[e]] || +expr[e] || expr[e];
+    if(context == null)
+      expr[e] = true || context[expr[e]] || +expr[e] || expr[e];
     else
       expr[e] = +expr[e] || expr[e];
   }
